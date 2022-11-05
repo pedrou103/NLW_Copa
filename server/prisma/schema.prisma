@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// model é uma tabela
+// botando o @id digo que é a chave primaria
+// botando o @unique digo que ele é unico
+model Pool {
+  id        String   @id @default(cuid())
+  title     String
+  code      String   @unique
+  createdAt DateTime @default(now())
+}
