@@ -21,7 +21,7 @@ export default function Home(props: HomeProps) {
 
     try {
       console.log('entrou aqui')
-      const response = await api.post('/pools', {
+      const response = await api.post('pools', {
         title: poolTitle
       })
   
@@ -45,7 +45,7 @@ export default function Home(props: HomeProps) {
       <main>
         <Image src={logoImage} alt="logo nlw copa" />
 
-        <h1 className='mt-14 text-white text-5xl font-bold leading-tight'>Crie seu próprio botão da copa e compartilhe entre amigos!</h1>
+        <h1 className='mt-14 text-white text-5xl font-bold leading-tight'>Crie seu próprio bolão da copa e compartilhe entre amigos!</h1>
 
         <div className='mt-10 flex items-center gap-2'>
           <Image src={usersAvatarExampleImage} alt="" />
@@ -58,7 +58,7 @@ export default function Home(props: HomeProps) {
             className='flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-gray-100'
             type="text"
             required
-            placeholder='Qual nome do seu boleto' 
+            placeholder='Qual nome do seu bolão' 
             value={poolTitle}
             onChange={event => setPoolTitle(event.target.value)}
           />
